@@ -3,9 +3,11 @@ import './color_slider.css';
 
 const ColorSlider = ({ baseColor, colorName, onValueChange }) => {
 
+    const handleValueChange = (e) => {
+        onValueChange(e.target.value);
+    }
 
     return (
-        
         <>
             <label htmlFor="red">{colorName}</label>
 			<input
@@ -15,7 +17,7 @@ const ColorSlider = ({ baseColor, colorName, onValueChange }) => {
                 min="0"
                 max="255"
                 value="0"
-                onChange={() => {onValueChange(value)}}
+                onChange={handleValueChange}
              />
         </>
     );
